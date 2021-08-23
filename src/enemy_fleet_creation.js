@@ -61,7 +61,7 @@ let createEnemyFleet = () => {
   let enemyCarrier = new shipFactory("Carrier", 5, 5);
   let enemyBattleship = new shipFactory("Battleship", 4, 4);
   let enemyCruiser = new shipFactory("Cruiser", 3, 3);
-  let enemySubmarine = new shipFactory("Submarine", 2, 2);
+  let enemySubmarine = new shipFactory("Submarine", 3, 3);
   let enemyPatrolboat = new shipFactory("Patrol Boat", 2, 2);
   stateControl.enemyCarrier.ship = enemyCarrier;
   stateControl.enemyBattleship.ship = enemyBattleship;

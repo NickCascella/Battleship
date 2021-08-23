@@ -96,7 +96,7 @@ class shipFactory {
     } else if (this.hit_points === 0 && stateControl.enemyTurn === false) {
       shipHitMessage(
         "Checking.....",
-        `Nice shot!....you sunk their ${this.name}!!`
+        `Nice shot! you sunk their ${this.name}!`
       );
       setTimeout(function nextTurn() {
         console.log("hi");
