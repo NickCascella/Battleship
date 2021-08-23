@@ -37,7 +37,6 @@ let attackEnemy = (e) => {
       setColors(targetSquare, "rgb(250, 34, 196)");
       stateControl.enemyPatrolboat.ship.hit();
     }
-    checkShipsSank();
   } else if (
     stateControl.readyAim === true &&
     stateControl.readyFire === true &&
@@ -82,7 +81,6 @@ let enemyAttack = () => {
     } else if (stateControl.playerPatrolboat.position.includes(targetSquare)) {
       stateControl.playerPatrolboat.ship.hit();
     }
-    checkShipsSank();
   } else if (
     stateControl.enemySuccessfulShots.includes(targetSquare) ||
     stateControl.missedShots.includes(targetSquare)

@@ -1,5 +1,6 @@
 import { createCarrierOnBoard } from "./battleship";
 import { shipHitMessage, enemyAttack } from "./enemy_fleet_creation";
+import { checkShipsSank } from "./end_game";
 
 let stateControl = {
   board: document.getElementById("game_board"),
@@ -99,10 +100,16 @@ class shipFactory {
         `Nice shot! you sunk their ${this.name}!`
       );
       setTimeout(function nextTurn() {
-        console.log("hi");
         stateControl.enemyShipsSunk++;
-        stateControl.enemyTurn = true;
-        enemyAttack();
+        if (
+          stateControl.playerShipsSunk === 5 ||
+          stateControl.enemyShipsSunk === 5
+        ) {
+          checkShipsSank();
+        } else {
+          stateControl.enemyTurn = true;
+          enemyAttack();
+        }
       }, 5500);
     } else if (this.hit_points === 0 && stateControl.enemyTurn === true) {
       shipHitMessage(
@@ -112,8 +119,15 @@ class shipFactory {
       stateControl.enemyTurn = false;
       setTimeout(function nextTurn() {
         stateControl.playerShipsSunk++;
-        stateControl.readyFire = true;
-        stateControl.readyAim = true;
+        if (
+          stateControl.playerShipsSunk === 5 ||
+          stateControl.enemyShipsSunk === 5
+        ) {
+          checkShipsSank();
+        } else {
+          stateControl.readyFire = true;
+          stateControl.readyAim = true;
+        }
       }, 3300);
     }
   }

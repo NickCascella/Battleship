@@ -3,7 +3,6 @@ import {
   stateControl,
   findSharedElements,
 } from "./battleship_creation";
-import { checkShipsSank } from "./end_game";
 import {
   attackEnemy,
   enemyAttack,

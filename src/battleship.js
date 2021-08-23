@@ -47,7 +47,7 @@ let createShips = () => {
   let carrier = new shipFactory("Carrier", 5, 5);
   let battleship = new shipFactory("Battleship", 4, 4);
   let cruiser = new shipFactory("Cruiser", 3, 3);
-  let submarine = new shipFactory("Submarine", 2, 2);
+  let submarine = new shipFactory("Submarine", 3, 3);
   let patrolboat = new shipFactory("Patrol Boat", 2, 2);
   stateControl.playerCarrier.ship = carrier;
   stateControl.playerBattleship.ship = battleship;
