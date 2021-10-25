@@ -7,6 +7,7 @@ let stateControl = {
   textDisplay: document.getElementById("text_display"),
   currentFunction: "This is filler",
   hoizontal_placement: true,
+  availibleSquares: [],
   taken_sqaures: [],
   checkArray: false,
   hoverArray: [],
@@ -529,6 +530,7 @@ let createGameBoard = () => {
     square.addEventListener("mouseover", check);
     square.classList.add("squares");
     stateControl.board.appendChild(square);
+    stateControl.availibleSquares.push(i);
   }
 };
 

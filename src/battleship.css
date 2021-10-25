@@ -87,7 +87,7 @@ body {
 
 #name_display {
   font-size: 30px;
-  color: greenyellow;
+  color: rgb(47, 179, 255);
 }
 
 #name_enter {
@@ -98,7 +98,7 @@ body {
 
 #enemy_display {
   font-size: 30px;
-  color: greenyellow;
+  color: rgb(255, 165, 47);
 }
 
 #game_board {

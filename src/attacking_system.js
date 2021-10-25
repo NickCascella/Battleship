@@ -56,7 +56,17 @@ let attackEnemy = (e) => {
 };
 
 let enemyAttack = () => {
-  let targetid = Math.floor(Math.random() * 100);
+  const getTargetId = () => {
+    let randomNum = Math.floor(
+      Math.random() * stateControl.availibleSquares.length
+    );
+    let pickedSquare = stateControl.availibleSquares[randomNum];
+    stateControl.availibleSquares.splice(randomNum, 1);
+    return pickedSquare;
+  };
+
+  const targetid = getTargetId();
+  // let targetid = Math.floor(Math.random() * 100);
   let targetSquare = document.getElementById(`square_${targetid}`);
   if (
     stateControl.taken_sqaures.includes(targetSquare) &&
